@@ -1,0 +1,50 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - config.tanzu.support.vmware.com
+  resources:
+  - routeconfigs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - config.tanzu.support.vmware.com
+  resources:
+  - routeconfigs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - config.tanzu.support.vmware.com
+  resources:
+  - routeconfigs/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - projectcontour.io
+  resources:
+  - httpproxies
+  verbs:
+  - get
+  - list
+  - update
+  - watch

@@ -1,0 +1,7 @@
+apiVersion: config.tanzu.support.vmware.com/v1
+kind: RouteConfig
+metadata:
+  name: routeconfig-sample
+spec:
+  foo: mytest
+  # TODO(user): Add fields here

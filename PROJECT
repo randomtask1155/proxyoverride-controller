@@ -1,0 +1,16 @@
+domain: tanzu.support.vmware.com
+layout:
+- go.kubebuilder.io/v4-alpha
+projectName: proxyoverride-controller
+repo: tanzu.support.vmware.com/routeconfiger
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: tanzu.support.vmware.com
+  group: config
+  kind: RouteConfig
+  path: tanzu.support.vmware.com/routeconfiger/api/v1
+  version: v1
+version: "3"

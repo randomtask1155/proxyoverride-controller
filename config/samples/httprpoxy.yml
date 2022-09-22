@@ -1,0 +1,11 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: cf-route-0e9fe7df-0423-4cbb-a0a2-c82b21ec0b02
+  namespace: cf-space-97c65d1a-af99-44b7-8487-037d474470e5
+spec:
+  routes:
+    - enableWebsockets: true
+      services:
+        - name: s-dd283759-e9fa-41c6-ac6e-35bb843a0e3e
+          port: 8080

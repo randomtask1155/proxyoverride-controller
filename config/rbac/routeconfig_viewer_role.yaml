@@ -1,0 +1,20 @@
+# permissions for end users to view routeconfigs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: routeconfig-viewer-role
+rules:
+- apiGroups:
+  - config.tanzu.support.vmware.com
+  resources:
+  - routeconfigs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - config.tanzu.support.vmware.com
+  resources:
+  - routeconfigs/status
+  verbs:
+  - get

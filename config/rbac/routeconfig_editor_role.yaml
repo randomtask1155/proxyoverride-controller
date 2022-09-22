@@ -1,0 +1,24 @@
+# permissions for end users to edit routeconfigs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: routeconfig-editor-role
+rules:
+- apiGroups:
+  - config.tanzu.support.vmware.com
+  resources:
+  - routeconfigs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - config.tanzu.support.vmware.com
+  resources:
+  - routeconfigs/status
+  verbs:
+  - get
